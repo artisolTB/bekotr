@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <title>yourTitleHere</title>
+    <link rel="shortcut icon" href="favicon.ico"
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0 user-scalable=no"/>
+
+    <!--Replace the image below with your own-->
+    <style>
+        body {
+            background-image: url('images/teneo.ai.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    
+<!-- Teneo Web Chat Widget -->
+<div id="teneo-web-widget" style="position: absolute; height: 100%; width: 100%; top: 0; z-index: 999; pointer-events: none;"></div>
+    <script type="module" crossorigin="anonymous" src="script/teneowebwidget-v2.0.0.js"></script>
+    <link rel="stylesheet" crossorigin="anonymous" href="style/teneowebwidget-v2.0.0.css">
+    <!--link rel="stylesheet" crossorigin="true" href="/path/to/custom-css-file.css"-->
+    <script>
+        window.onload = function () {
+            if (window.TeneoWebWidget && typeof window.TeneoWebWidget.initialize === 'function') {
+                window.TeneoWebWidget.initialize({
+                    element: document.getElementById('teneo-web-widget'), 
+                    settings: {
+                        title: "Chat with Leroy",
+                        engineUrl: "https://some.teneo/engine-instance/",
+                        botImage: "src/assets/supportAgent.png",
+                        botName: "Leroy",
+                        userImage: "src/assets/user.png",
+                        sendEmptyInput: "ON_OPEN_WIDGET",
+                        asrActive: false,
+                        ttsActive: false
+                    }
+                });
+            }
+        }
+    </script>
+<!-- Teneo Web Widget end -->    
+
+</body>
